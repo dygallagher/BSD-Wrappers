@@ -26,8 +26,15 @@ hr {
 	height: 1px;
 	background-color: #ccc;
 }
+@media all and (min-width:400px) {
+	.background {
+		background-image: url('_img/test-bg.png');
+	}
+}
 .background {
-	background: #BE0A0D url('_img/test-bg.png') no-repeat top;
+	background-color: #BE0A0D;
+	background-position: top;
+	background-repeat: no-repeat;
 	background-attachment: fixed;
 	height: 100%;
 	padding-top: 50px;
@@ -147,6 +154,11 @@ textarea {
 [type="checkbox"]:not(:checked):focus + label:before {
   border: 2px solid #00B0E9;
 }
+[type="checkbox"]:checked:hover + label:before,
+[type="checkbox"]:not(:checked):hover + label:before {
+  border: 2px solid #ccc;
+}
+
 
 [type="radio"] {
   border: 0; 
@@ -182,6 +194,9 @@ label.radio {
 }
 [type="radio"]:focus + span:before {
   box-shadow: 0 0 0 2px #00B0E9;
+}
+[type="radio"]:hover + span:before {
+  border-color: #ccc;
 }
 
 [type="submit"] {
