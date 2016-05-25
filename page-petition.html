@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+<title>Petition Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_fonts/font-face.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+/* Normallize css */
+html, body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	color: #05171D;
+}
+-webkit-font-smoothing: antialiased;img,legend{border:0}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%; min-height:100%;}body{margin:0; min-height:100%;}a{background-color:transparent}a:active,a:hover{outline:0}b,strong{font-weight:700}hr{box-sizing:content-box;height:0}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{padding:0}textarea{overflow:auto}
+h1 {
+	font-family: 'StagSansMedium', sans-serif;
+	font-size: 38px;
+	line-height: 54px; 
+}
+hr {
+	border: 0;
+	height: 1px;
+	background-color: #ccc;
+}
+.background {
+	background: #BE0A0D url('_img/test-bg.png') no-repeat top;
+	background-attachment: fixed;
+	height: 100%;
+	padding-top: 50px;
+}
+.container {
+	background-color: #fff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	max-width: 615px;
+	width: 100%;
+	padding: 20px;
+	margin: 0 auto;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.50);
+	box-sizing: border-box;
+}
+form {
+	margin-top: 2em;
+}
+.frm-row {
+	margin-bottom: 25px;
+}
+.require-label {
+	font-size: 16px;
+	color: #757575;
+	float: right;
+}
+label {
+	font-weight: 600;
+	line-height: 28px;
+}
+
+input, textarea, select {
+	padding: 0 15px;
+	box-sizing: border-box;
+	width: 100%;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 2px solid #e0e0e0;
+}
+input:hover, textarea:hover, select:hover {
+	border-color: #ccc;
+}
+input:focus, textarea:focus {
+	border-color: #00B0E9;
+}
+input[type=text], select {
+	height: 60px;
+}
+textarea {
+	width: 100%;
+	height: 145px;
+	padding: 10px 15px;
+}
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  padding-top: 2px;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left:0; top: 2px;
+  width: 20px; height: 20px;
+  border: 2px solid #e0e0e0;
+  background: #f8f8f8;
+  border-radius: 3px;
+  /*box-shadow: inset 0 1px 3px rgba(0,0,0,.3)*/
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: 5px; left: 5px;
+  font-size: 18px;
+  line-height: 0.8;
+  color: #00B0E9;
+  transition: all .2s;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+  border: 2px solid #00B0E9;
+}
+
+[type="radio"] {
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
+  width: 1px;
+}
+label.radio {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+[type="radio"] + span {
+  display: block;
+}
+[type="radio"] + span:before {
+  content: '';
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 100%;
+  border:2px solid #e0e0e0;
+  margin-right: 7px;
+  vertical-align: -6px;
+  transition: 200ms ease all;
+}
+[type="radio"]:checked + span:before {
+  background: #00B0E9;
+  
+}
+[type="radio"]:focus + span:before {
+  box-shadow: 0 0 0 2px #00B0E9;
+}
+
+[type="submit"] {
+	margin: 30px auto;
+	color: #fff;
+	background-color: #E30613;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	transition: 200ms ease-in-out;
+	border:none !important;
+	width: auto;
+	text-align:center;
+	height: 70px;
+	font-size: 22px;
+	padding: 0 30px;
+	display: block;
+}
+[type="submit"]:hover {
+	background-color: #B90610;
+}
+
+#footer {
+	text-align: center;
+}
+#footer ul {
+	list-style-type: none;
+	display: inline;
+	padding: 0;
+	font-size: 16px;
+}
+#footer ul li {
+	display: inline;
+	margin-right: 1.5em;
+}
+#footer ul li:last-child {
+	margin-right: 0;
+}
+
+a, a:link {
+	color: #3f51b5;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+/* errors */
+.alert {
+	color: #E30613;
+}
+</style>
+</head>
+<body>
+
+	<div class="background">
+
+		<div class="container">
+
+			<a href="http://www.which.co.uk"><img src="_img/which-logo.png"></a>
+
+			<h1>Calling time on nuisance calls and text messages</h1>
+
+			<p>You should be able to trust car makers’ fuel emission and efficiency claims. We want car makers to come clean on fuel tests and new tests you can trust brought forward without delay.</p>
+
+			<p>If you agree that tests shouldn’t be rigged and consumers who lose out should get redress, sign our petition to clean up fuel claims.</p>
+
+			<form>
+
+				<div class="frm-row">
+					<div class="require-label"><span class="alert">*</span> Required</div>
+					<label for="frm-email">Email address <span class="alert">*</span></label>
+					<input type="text" name="email" id="frm-email">
+				</div>
+
+				<div class="frm-row">
+					<label for="frm-postcode">Postal code</label>
+					<input type="text" name="email" id="frm-postcode">
+				</div>
+
+				<div class="frm-row">
+					<label for="frm-important">This is important to me because...</label>
+					<textarea name="important" id="frm-important"></textarea>
+				</div>
+
+				<div class="frm-row">
+
+					<label for="frm-select">Select something</label>
+					<select id="frm-select">
+						<option value="value1">Value 1</option> 
+						<option value="value2">Value 2</option>
+						<option value="value3">Value 3</option>
+					</select>
+
+				</div>
+
+				<div class="frm-row">
+
+					<input type="checkbox" id="frm-check" value="first_checkbox"> <label class="css-label" for="frm-check">This is the first checkbox</label>
+
+				</div>
+
+				<div class="frm-row">
+
+					<label for="accessible" class="radio">
+						<input type="radio" value="accessible" name="quality" id="accessible"> <span>Option 1</span>
+					</label>
+
+					<label for="pretty" class="radio">
+						<input type="radio" value="pretty" name="quality" id="pretty"> <span>Option 2</span>
+					</label>
+
+					<label for="accessible-and-pretty" class="radio">
+						<input type="radio" value="pretty"  name="quality" id="accessible-and-pretty" checked> <span>Option 3</span>
+					</label>
+
+				</div>
+
+				<hr>
+
+				<small>This is a disclaimer sit amet felis tempus, sodales erat et, tristique ligula. Sed a nisl ac ante finibus faucibus vel sed ex. </small>
+
+				<div class="input"><input name="submit-btn" value="Click to sign" type="submit"></div>
+
+			</form>
+
+			<div id="footer">
+				
+				<ul>
+					
+					<li><a href="#">Privacy policy</a></li>
+					<li><a href="#">Cookie policy</a></li>
+				
+				</ul>
+
+			</div>
+
+		</div><!-- container -->
+
+		<br><br>
+
+	</div><!-- background -->
+	
+	
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</body>
+</html>
