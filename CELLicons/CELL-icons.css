@@ -1,0 +1,12 @@
+/* Webfont: CELL-icons */@font-face {
+    font-family: 'CELLicons';
+    src: url('CELL-icons.eot'); /* IE9 Compat Modes */
+    src: url('CELL-icons.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('CELL-icons.woff') format('woff'), /* Modern Browsers */
+         url('CELL-icons.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('CELL-icons.svg#CELL-icons') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
